@@ -1,0 +1,22 @@
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Mesa {
+  id         Int     @id @default(autoincrement())
+  numero     Int     @unique
+  disponible Boolean @default(true)
+}
+
+model Socio {
+  id           Int    @id @default(autoincrement())
+  nombre       String
+  descripcion  String
+  fotoPerfil   String
+  fotoAdicional String
+}
