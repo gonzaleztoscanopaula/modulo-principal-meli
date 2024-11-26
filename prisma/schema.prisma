@@ -1,22 +1,22 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
 datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
-generator client {
-  provider = "prisma-client-js"
-}
-
-model Mesa {
+model mesa {
   id         Int     @id @default(autoincrement())
-  numero     Int     @unique
+  numero     Int     @unique(map: "Mesa_numero_key")
   disponible Boolean @default(true)
 }
 
-model Socio {
-  id           Int    @id @default(autoincrement())
-  nombre       String
-  descripcion  String
-  fotoPerfil   String
+model socio {
+  id            Int    @id @default(autoincrement())
+  nombre        String
+  descripcion   String
+  fotoPerfil    String
   fotoAdicional String
 }

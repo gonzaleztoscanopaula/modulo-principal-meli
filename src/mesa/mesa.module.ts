@@ -1,10 +1,10 @@
 import { Module } from '@nestjs/common';
 import { MesaService } from './mesa.service';
 import { MesaController } from './mesa.controller';
-import { PrismaModule } from '../prisma/prisma.module'; // Importa PrismaModule
+import { PrismaModule } from '../prisma/prisma.module';
 
 @Module({
-  imports: [PrismaModule], // Asegúrate de incluir PrismaModule aquí
+  imports: [PrismaModule],
   controllers: [MesaController],
   providers: [MesaService],
 })
